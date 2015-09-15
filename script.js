@@ -131,4 +131,6 @@ resetButton.addEventListener("click", function() {
   for(i=0; i<inputs.length; ++i) {
     inputs[i].value = "";
   }
+  canvas.fillStyle = "#ffffff";
+  canvas.fillRect(0, 0, 1000, 1000);
 })
