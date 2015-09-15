@@ -99,6 +99,30 @@ function mainFunction() {
       }
     }
   }
+
+  //Regular cases
+  m1 = line1.m; //a
+  m2 = line2.m; //b
+  b1 = bFromLine(line1); //c
+  b2 = bFromLine(line2); //d
+  intersectX = (b2-b1) / (m1-m2);
+  intersectY = (m1*intersectX) + b1;
+  intersect = new point(intersectX, intersectY);
+  intersectWithLine1 = (intersect.x >= line1.p1.x) && (intersect.x <= line1.p2.x);
+  intersectWithLine2 = (intersect.x >= line2.p1.x) && (intersect.x <= line2.p2.x);
+  if(intersectWithLine1 && intersectWithLine2) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
-runButton.addEventListener("click", mainFunction);
+runButton.addEventListener("click", function() {
+  if(mainFunction) {
+    alert("The lines do collide!");
+  }
+  else {
+    alert("The lines don't collide!");
+  }
+});
