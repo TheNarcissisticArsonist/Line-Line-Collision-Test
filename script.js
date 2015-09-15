@@ -15,6 +15,7 @@ var inputs = [l1p1x, l1p2x, l2p1x, l2p2x, l1p1y, l1p2y, l2p1y, l2p2y];
 
 var runButton = document.getElementById("testLines");
 var resetButton = document.getElementById("resetButton");
+var randomButton = document.getElementById("randomLines");
 
 function point(x, y) {
   this.x = x;
@@ -159,4 +160,16 @@ resetButton.addEventListener("click", function() {
     inputs[i].value = "";
   }
   clearScreen();
+});
+randomButton.addEventListener("click", function() {
+  for(i=0; i<inputs.length; ++i) {
+    inputs[i].value = String((Math.random() * 1000) - 500);
+  }
+  collide = mainFunction();
+  if(collide) {
+    alert("The lines do collide!");
+  }
+  else {
+    alert("The lines don't collide!");
+  }
 });
