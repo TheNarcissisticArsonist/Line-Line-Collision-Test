@@ -4,3 +4,12 @@ p {
 div {
   display: inline-block;
 }
+
+div#line1Cont {
+  background-color: #ccccff;
+  padding: 0px 5px;
+}
+div#line2Cont {
+  background-color: #ccffcc;
+  padding: 0px 5px;
+}
