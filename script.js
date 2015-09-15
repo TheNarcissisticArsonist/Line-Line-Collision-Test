@@ -59,14 +59,7 @@ function line(p1, p2) {
 }
 
 function bFromLine(line) {
-  x1 = line.p1.x;
-  x2 = line.p2.x;
-  y1 = line.p1.y;
-  y2 = line.p2.y;
-
-  b = (((y2-y1)/(x2-x1))*(-x1))+y1;
-
-  return b;
+  return y2 - (line.m * line.p2.x);
 }
 
 function mainFunction() {
