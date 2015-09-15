@@ -67,7 +67,7 @@ function bFromLine(line) {
   return line.p2.y - (line.m * line.p2.x);
 }
 function clearScreen() {
-  canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
+  location.reload();
 }
 
 function mainFunction() {
