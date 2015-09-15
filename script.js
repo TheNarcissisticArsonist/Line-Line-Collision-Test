@@ -69,6 +69,9 @@ function bFromLine(line) {
 function clearScreen() {
   location.reload();
 }
+function equal(i1, i2) {
+  return Math.abs(i1-i2) < 0.01
+}
 
 function mainFunction() {
   //Get user input
@@ -88,10 +91,10 @@ function mainFunction() {
   drawLines();
 
   //Test for special cases
-  if(line1.m == line2.m) {
+  if(equal(line1.m, line2.m)) {
     b1 = bFromLine(line1);
     b2 = bFromLine(line2);
-    if(b1 != b2) {
+    if(!equal(b1, b2)) {
       return false;
     }
     else {
