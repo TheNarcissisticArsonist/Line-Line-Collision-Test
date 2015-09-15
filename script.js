@@ -50,6 +50,17 @@ function line(p1, p2) {
   }
 }
 
+function bFromLine(line) {
+  x1 = line.p1.x;
+  x2 = line.p2.x;
+  y1 = line.p1.y;
+  y2 = line.p2.y;
+
+  b = (((y2-y1)/(x2-x1))*(-x1))+y1;
+  
+  return b;
+}
+
 function mainFunction() {
   //Get user input
   for(i=0; i<8; ++i) {
@@ -63,7 +74,7 @@ function mainFunction() {
 
   //Test for special cases
   if(line1.m == line2.m) {
-    
+
   }
 }
 
