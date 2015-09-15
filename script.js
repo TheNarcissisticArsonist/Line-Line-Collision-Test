@@ -59,7 +59,7 @@ function line(p1, p2) {
 }
 
 function bFromLine(line) {
-  return y2 - (line.m * line.p2.x);
+  return line.p2.y - (line.m * line.p2.x);
 }
 
 function mainFunction() {
