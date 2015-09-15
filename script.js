@@ -65,12 +65,11 @@ function line(p1, p2) {
 function bFromLine(line) {
   return line.p2.y - (line.m * line.p2.x);
 }
+function clearScreen() {
+  canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
+}
 
 function mainFunction() {
-  //Clear the screen
-  canvas.fillStyle = "#ffffff";
-  canvas.fillRect(0, 0, 1000, 1000);
-
   //Get user input
   for(i=0; i<inputs.length; ++i) {
     if(isNaN(inputs[i].value)) {
@@ -159,6 +158,5 @@ resetButton.addEventListener("click", function() {
   for(i=0; i<inputs.length; ++i) {
     inputs[i].value = "";
   }
-  canvas.fillStyle = "#ffffff";
-  canvas.fillRect(0, 0, 1000, 1000);
-})
+  clearScreen();
+});
