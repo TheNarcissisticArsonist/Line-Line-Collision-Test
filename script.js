@@ -57,11 +57,15 @@ function bFromLine(line) {
   y2 = line.p2.y;
 
   b = (((y2-y1)/(x2-x1))*(-x1))+y1;
-  
+
   return b;
 }
 
 function mainFunction() {
+  //Clear the screen
+  canvas.fillStyle = "#ffffff";
+  canvas.fillRect(0, 0, 1000, 1000);
+
   //Get user input
   for(i=0; i<8; ++i) {
     if(isNaN(inputs[i].value)) {
@@ -74,7 +78,14 @@ function mainFunction() {
 
   //Test for special cases
   if(line1.m == line2.m) {
+    b1 = bFromLine(line1);
+    b2 = bFromLine(line2);
+    if(b1 != b2) {
+      return false;
+    }
+    else {
 
+    }
   }
 }
 
