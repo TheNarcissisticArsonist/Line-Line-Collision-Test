@@ -129,7 +129,7 @@ function drawLines() {
 
   cursor.setX(line1.p1.x);
   cursor.setY(line1.p1.y);
-  canvas.moveTo(500+Number(cursor.x), Number(500-cursor.y));
+  canvas.moveTo(500+Number(cursor.x), 500-Number(cursor.y));
 
   cursor.setX(line1.p2.x);
   cursor.setY(line1.p2.y);
