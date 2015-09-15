@@ -84,6 +84,9 @@ function mainFunction() {
   line1.orderPointsByX();
   line2.orderPointsByX();
 
+  //Draw it
+  drawLines();
+
   //Test for special cases
   if(line1.m == line2.m) {
     b1 = bFromLine(line1);
@@ -103,7 +106,7 @@ function mainFunction() {
       }
     }
   }
-  
+
   //Regular cases
   m1 = line1.m; //a
   m2 = line2.m; //b
@@ -120,6 +123,27 @@ function mainFunction() {
   else {
     return false;
   }
+}
+function drawLines() {
+  cursor = new point(0, 0);
+
+  cursor.setX(line1.p1.x);
+  cursor.setY(line1.p1.y);
+  canvas.moveTo(500+Number(cursor.x), Number(500-cursor.y));
+
+  cursor.setX(line1.p2.x);
+  cursor.setY(line1.p2.y);
+  canvas.lineTo(500+Number(cursor.x), 500-Number(cursor.y));
+  canvas.stroke();
+
+  cursor.setX(line2.p1.x);
+  cursor.setY(line2.p1.y);
+  canvas.moveTo(500+Number(cursor.x), 500-Number(cursor.y));
+
+  cursor.setX(line2.p2.x);
+  cursor.setY(line2.p2.y);
+  canvas.lineTo(500+Number(cursor.x), 500-Number(cursor.y));
+  canvas.stroke();
 }
 
 runButton.addEventListener("click", function() {
