@@ -58,6 +58,7 @@ function mainFunction() {
     }
   }
   line1 = new line(new point(l1p1x.value, l1p1y.value), new point(l1p2x.value, l1p2y.value));
+  line2 = new line(new point(l2p1x.value, l2p1y.value), new point(l2p2x.value, l2p2y.value));
 }
 
 runButton.addEventListener("click", mainFunction);
