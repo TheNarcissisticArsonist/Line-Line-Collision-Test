@@ -11,6 +11,8 @@ var l1p2y = document.getElementById("line1Point2Y");
 var l2p1y = document.getElementById("line2Point1Y");
 var l2p2y = document.getElementById("line2Point2Y");
 
+var inputs = [l1p1x, l1p2x, l2p1x, l2p2x, l1p1y, l1p2y, l2p1y, l2p2y];
+
 var runButton = document.getElementById("testLines");
 
 function point(x, y) {
@@ -47,3 +49,15 @@ function line(p1, p2) {
     this.updateM();
   }
 }
+
+function mainFunction() {
+  for(i=0; i<8; ++i) {
+    if(isNaN(inputs[i].value)) {
+      alert("Make sure inputs are numbers only!");
+      return;
+    }
+  }
+  line1 = new line(new point(l1p1x.value, l1p1y.value), new point(l1p2x.value, l1p2y.value));
+}
+
+runButton.addEventListener("click", mainFunction);
