@@ -32,6 +32,13 @@ function line(p1, p2) {
   this.updateM = function() {
     this.m = (p2.y-p1.y) / (p2.x-p1.x);
   }
+  this.orderPointsByX = function() {
+    if(this.p1.x > this.p2.x) {
+      temp = this.p1.x;
+      this.p1.x = this.p2.x;
+      this.p2.x = temp;
+    }
+  }
   this.setP1X = function(newP1X) {
     p1.setX(newP1X);
     this.updateM();
@@ -48,6 +55,7 @@ function line(p1, p2) {
     p2.setY(newP2Y);
     this.updateM();
   }
+  this.orderPointsByX();
 }
 
 function bFromLine(line) {
@@ -76,6 +84,9 @@ function mainFunction() {
   line1 = new line(new point(l1p1x.value, l1p1y.value), new point(l1p2x.value, l1p2y.value));
   line2 = new line(new point(l2p1x.value, l2p1y.value), new point(l2p2x.value, l2p2y.value));
 
+  line1.orderPointsByX();
+  line2.orderPointsByX();
+
   //Test for special cases
   if(line1.m == line2.m) {
     b1 = bFromLine(line1);
@@ -84,7 +95,12 @@ function mainFunction() {
       return false;
     }
     else {
-
+      if(line1.p1.x >= line2.p1.x && line1.p1.x <= line2.p2.x) {
+        return true;
+      }
+      if(line1.p2.x >= line2.p1.x && line1.p2.x <= line2.p2.x) {
+        return true;
+      }
     }
   }
 }
