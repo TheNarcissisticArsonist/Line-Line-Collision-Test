@@ -34,9 +34,12 @@ function line(p1, p2) {
   }
   this.orderPointsByX = function() {
     if(this.p1.x > this.p2.x) {
-      temp = this.p1.x;
+      tempX = this.p1.x;
       this.p1.x = this.p2.x;
-      this.p2.x = temp;
+      this.p2.x = tempX;
+      tempY = this.p1.y;
+      this.p1.y = this.p2.y;
+      this.p2.y = tempY;
     }
   }
   this.setP1X = function(newP1X) {
