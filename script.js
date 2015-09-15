@@ -1,6 +1,18 @@
 var canvasElement = document.getElementById("myCanvas");
 var canvas = canvasElement.getContext("2d");
 
+var l1p1x = document.getElementById("line1Point1X");
+var l1p2x = document.getElementById("line1Point2X");
+var l2p1x = document.getElementById("line2Point1X");
+var l2p2x = document.getElementById("line2Point2X");
+
+var l1p1y = document.getElementById("line1Point1Y");
+var l1p2y = document.getElementById("line1Point2Y");
+var l2p1y = document.getElementById("line2Point1Y");
+var l2p2y = document.getElementById("line2Point2Y");
+
+var runButton = document.getElementById("testLines");
+
 function point(x, y) {
   this.x = x;
   this.y = y;
