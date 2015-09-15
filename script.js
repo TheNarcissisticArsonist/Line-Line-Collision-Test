@@ -98,9 +98,12 @@ function mainFunction() {
       if(line1.p2.x >= line2.p1.x && line1.p2.x <= line2.p2.x) {
         return true;
       }
+      else {
+        return false;
+      }
     }
   }
-
+  
   //Regular cases
   m1 = line1.m; //a
   m2 = line2.m; //b
@@ -120,7 +123,8 @@ function mainFunction() {
 }
 
 runButton.addEventListener("click", function() {
-  if(mainFunction) {
+  collide = mainFunction();
+  if(collide) {
     alert("The lines do collide!");
   }
   else {
